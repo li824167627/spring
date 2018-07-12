@@ -2,7 +2,6 @@ package cn.itcast.mybatis.dao;
 
 import org.apache.ibatis.session.*;
 
-
 import cn.itcast.mybatis.po.User;
 
 public class UserDaoImpl implements UserDao{

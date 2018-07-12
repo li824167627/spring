@@ -3,6 +3,7 @@ package cn.itcast.mybatis.dao;
 import static org.junit.Assert.*;
 
 import java.io.InputStream;
+import java.util.Date;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.*;
@@ -30,12 +31,13 @@ public class UserDaoImplTest {
 
 	@Test
 	public void testUserDaoImpl() {
-		fail("Not yet implemented");
+		
+		
 	}
 
 	@Test
 	public void testFindUserById() throws Exception{
-		fail("Not yet implemented");
+
 		//创建UserDao的对象
 		UserDao userDao = new UserDaoImpl(sqlSessionFactory);
 		
@@ -46,13 +48,32 @@ public class UserDaoImplTest {
 	}
 
 	@Test
-	public void testInsertUser() {
-		fail("Not yet implemented");
+	public void testInsertUser() throws Exception {
+		UserDao userDao = new UserDaoImpl(sqlSessionFactory);
+		
+		User user = new User();
+		user.setid(7);
+		user.setUsername("王中军");
+		user.setSex("男");
+		user.setBirthday(new Date());
+		user.setAddress("河南");
+		
+		//调用UserDao的方法
+		userDao.insertUser(user);
+		
+		System.out.println(user);
+	
 	}
 
 	@Test
-	public void testDeleteUser() {
-		fail("Not yet implemented");
+	public void testDeleteUser() throws Exception {
+		        //创建UserDao的对象
+				UserDao userDao = new UserDaoImpl(sqlSessionFactory);
+				
+				//调用UserDao的方法
+				userDao.deleteUser(8);
+				
+				System.out.println("完成");
 	}
 
 }
